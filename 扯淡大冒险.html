@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>驿站小游戏：扯淡大冒险</title>
+	<script>
+
+		function chooseA() 
+		{
+			if(关卡==0){
+				win();
+			}
+			else if(关卡==1){
+				alert("然而蛮荒大陆是游戏，你并不能在游戏里玩游戏");
+			}
+			else if(关卡==2){
+				alert("你成为了学霸，你变强了，也变秃了。");
+			}
+		}
+		function chooseB() 
+		{
+			if(关卡==0){
+				win();
+			}
+			else if(关卡==1){
+				alert("然而OI大陆是小说，你咋生存？");
+			}
+			else if(关卡==2){
+				alert("你在游戏里搭网站？");
+			}
+		}
+		function chooseC() 
+		{
+			if(关卡==0){
+				win();
+			}
+			else if(关卡==1){
+				alert("在游戏里学OI？");
+			}
+			else if(关卡==2){
+				alert("壮举！可惜你不小心烧了学校");
+				win();
+			}
+		}
+		function chooseD() 
+		{
+			if(关卡==0){
+				win();
+			}
+			else if(关卡==1){
+				alert("对，这才现实");
+				win();
+			}
+			else if(关卡==2){
+				alert("emm，你想坐牢吗");
+			}
+		}
+		function win() 
+		{
+			关卡=关卡+1;	
+			if(关卡==1){
+				document.getElementById("demo").innerHTML = "关卡"+关卡+": 请选择你要生存的地方：A.蛮荒大陆 B.OI大陆 C.洛谷 D.学校";
+			}
+			if(关卡==2){
+				document.getElementById("demo").innerHTML = "关卡"+关卡+": 你来到了学校，你要干什么：A.好好学习文化课 B.学习HTML C.烧作业 D.打老师";
+			}
+			if(关卡==3){
+				alert("你对了。后续剧情持续更新中，请期待");
+			}
+		}
+	</script>
+		
+</head>
+	<style>
+		body
+		{
+			background-color: #66CCFF;
+		}
+		p
+		{
+			color: white;
+			text-align: justify;
+		}
+		h1,h2
+		{
+			color: white;
+		}
+		a
+		{
+			text-decoration: none;
+			color: blue;
+		}
+		a:hover {color: blue;}
+		a:link {color: blue;}
+		a:active {color: blue;}
+		a:visted {color: blue;}
+		.midText
+		{
+			text-align: center;
+		}
+		.blue
+		{
+			color: blue;
+		}
+		.Select_blue
+		{
+			color: blue;
+			background-color: white;
+			padding: 7px;
+			border: 2px solid blue;
+			border-radius: 10px;
+			margin: 10px;
+			line-height: 30px;
+			width: 100px;
+			display: inline-block;
+			text-align:center;
+		}
+		.Select_blue:hover/*变色效果*/
+		{
+			color: white;
+			background-color: blue;
+		}
+		.normal {font-style: normal;}
+	</style>
+<body>
+	<h1 class="midText"> 扯淡大冒险 </h1>
+	<p class="midText">累了？那么来玩一玩脑洞新奇的扯淡冒险吧</p>
+	<h1 class="blue">--------------------------------------------------------------------------------------------------------------------------------------</h1>
+	<p id="demo">按下面任意一个按钮开始冒险</p>
+	<span  class="Select_blue" onclick='chooseA()'><b>A</b></span>
+	<span  class="Select_blue" onclick='chooseB()'><b>B</b></span>
+	<span  class="Select_blue" onclick='chooseC()'><b>C</b></span>
+	<span  class="Select_blue" onclick='chooseD()'><b>D</b></span>
+
+	<p></p>
+	
+	<script>
+		var 关卡=0;
+	</script>
+</body>
+</html>
