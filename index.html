@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+TYPE html>
 <html>
 <head>
 	<title>驿站小游戏：扯淡大冒险</title>
@@ -14,6 +14,7 @@
 				"From": "All",
 				"Win": "你开始了扯淡大冒险，ForkΨKILLET 为你加油！",
 				"Story": "请选择你要生存的地方：",
+				
 				"A": "【蛮荒大陆】",
 				"B": "OI大陆",
 				"C": "洛谷",
@@ -29,6 +30,7 @@
 					"C": "在游戏里学习OI？你很伟大！"
 				},
 				"Story": "你来到了学校，你要干什么：",
+				
 				"A": "好好学习文化课",
 				"B": "学习HTML",
 				"C": "烧作业",
@@ -43,7 +45,67 @@
 					"B": "你在游戏里搭网站？",
 					"D": "emmm...你想坐牢吗？【其实是进少管所】"
 				},
-				"Story": "咕咕咕"
+				"Story": "你烧了学校，你很着急，想要逃跑。你要逃去哪里",
+				
+				"A": "监狱",
+				"B": "另一个学校",
+				"C": "去警局自首",
+				"D": "上天"
+			},
+			{
+				"From": "C",
+				"Win": "诚实的孩子，上天会保佑你的",
+				"Fail":
+				{
+					"A": "你，难道不是应该去少管所吗。",
+					"B": "世界又少了一个学校",
+					"D": "你咋不下水，和王八……"
+				},
+				"Story": "你到了警局，你揭发了你们学校布置非常多的作业（1天一个人1吨（所以你知道烧作业为什么会烧到学校了吧），这对环境很不利。警察认为你烧了学校是对环境的保护，奖励给你一个银色的牌子，现在里要干什么",
+				"A": "看看牌子里写了什么",
+				"B": "吃饭",
+				"C": "上天",
+				"D": "把牌子吃了"
+
+			},
+			{
+				"From": "A",
+				"Win": "你好正常",
+				"Fail":
+				{
+					"C": "无语",
+					"B": "你撑死了",
+					"D": "牌子太大，吞不下去QAQ"
+				},
+				"Story": "“OI大陆，乃oier初入之地，愿你可进入修炼。”是否进入？",
+				"A": "是",
+				"B": "是",
+				"C": "是",
+				"D": "是",
+
+
+			},
+			{
+				"From": "All",
+				"Win": "你没有去",
+		
+				"Story": "你走出了警局，你要去打工吗",
+				"A": "是",
+				"B": "是",
+				"C": "否",
+				"D": "是"
+
+			},
+			{
+				"From": "C",
+				"Win": "独秀",
+		
+				"Story": "咕咕咕",
+				"A": "是",
+				"B": "是",
+				"C": "否",
+				"D": "是"
+
 			}
 		];
 		function 咕咕咕()
@@ -70,16 +132,20 @@
 							   +Story[Time].Story+"<br>"
 							   +"A. "+Story[Time].A+" B. "+Story[Time].B+" C. "+Story[Time].C+" D. "+Story[Time].D
 							   +"</p>";
-
 					Time++;
 				}
 			}
+
 			else alert(Story[Time].Fail[From]);
 		}
 	</script>
 		
 </head>
 	<style>
+		.hide
+		{
+			color: #66CCFF
+		}
 		body
 		{
 			background-color: #66CCFF;
@@ -129,16 +195,30 @@
 			background-color: blue;
 		}
 		.normal {font-style: normal;}
+		/*#Choose_E
+		{
+			color: #66CCFF;
+			background-color: #66CCFF;
+			padding: 7px;
+			border: 2px solid #66CCFF;
+			border-radius: 10px;
+			margin: 10px;
+			line-height: 30px;
+			width: 100px;
+			display: inline-block;
+			text-align:center;
+		}*/
 	</style>
 <body>
 	<h1 class="midText"> 扯淡大冒险 </h1>
 	<p class="midText">累了？那么来玩一玩脑洞新奇的扯淡冒险吧</p>
-	<h1 class="blue">--------------------------------------------------------------------------------------------------------------------------------------</h1>
+	<h1 class="blue">-------------------------------------------------------------------------------------------------------------------------------------</h1>
 	<p id="demo">按下面任意一个按钮开始冒险 awa</p>
 	<span id="Choose_A" class="Select_blue" onclick='Choose("A")'><b>A</b></span>
 	<span id="Choose_B" class="Select_blue" onclick='Choose("B")'><b>B</b></span>
 	<span id="Choose_C" class="Select_blue" onclick='Choose("C")'><b>C</b></span>
 	<span id="Choose_D" class="Select_blue" onclick='Choose("D")'><b>D</b></span>
+	<!--<span id="Choose_E" onclick='Choose("E")'><b></b></span>--> 
 
 	<p></p>
 </body>
