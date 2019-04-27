@@ -3,69 +3,78 @@
 <head>
 	<title>驿站小游戏：扯淡大冒险</title>
 	<script>
+		function E(id)
+		{
+			return document.getElementById(id);
+		}
+		var Time=0;
+		var Story= //只要将剧情添加于此处即可，Choose 函数会自动显示内容！
+		[
+			{
+				"From": "All",
+				"Win": "你开始了扯淡大冒险，ForkΨKILLET 为你加油！",
+				"Story": "请选择你要生存的地方：",
+				"A": "【蛮荒大陆】",
+				"B": "OI大陆",
+				"C": "洛谷",
+				"D": "学校"
+			},
+			{
+				"From": "D",
+				"Win": "对，这才现实。",
+				"Fail":
+				{
+					"A": "然而蛮荒大陆是游戏，你并不能在游戏里玩游戏...",
+					"B": "然而OI大陆是小说，你咋生存？",
+					"C": "在游戏里学习OI？你很伟大！"
+				},
+				"Story": "你来到了学校，你要干什么：",
+				"A": "好好学习文化课",
+				"B": "学习HTML",
+				"C": "烧作业",
+				"D": "打晕老师"
+			},
+			{
+				"From": "C",
+				"Win": "壮举！可惜你不小心烧了学校。",
+				"Fail":
+				{
+					"A": "你成为了学霸，你变强了，也变秃了。",
+					"B": "你在游戏里搭网站？",
+					"D": "emmm...你想坐牢吗？【其实是进少管所】"
+				},
+				"Story": "咕咕咕"
+			}
+		];
+		function 咕咕咕()
+		{
+			alert("【咕咕咕！】");
+		}
+		function Choose(From)
+		{
+			if(Story[Time].From==From||Story[Time].From=="All") // Win
+			{
+				alert(Story[Time].Win);
+				if(Story[Time].Story=="咕咕咕")
+				{
+					alert("恭喜，你选对了！");
+					E("demo").innerHTML="<p class=\".midText\">后续剧情持续更新中，请期待！【咕咕咕】</p>";
+					E("Choose_A").onclick=咕咕咕;
+					E("Choose_B").onclick=咕咕咕;
+					E("Choose_C").onclick=咕咕咕;
+					E("Choose_D").onclick=咕咕咕;
+				}
+				else
+				{
+					E("demo").innerHTML="<p class=\".midText\">"
+							   +Story[Time].Story+"<br>"
+							   +"A. "+Story[Time].A+" B. "+Story[Time].B+" C. "+Story[Time].C+" D. "+Story[Time].D
+							   +"</p>";
 
-		function chooseA() 
-		{
-			if(关卡==0){
-				win();
+					Time++;
+				}
 			}
-			else if(关卡==1){
-				alert("然而蛮荒大陆是游戏，你并不能在游戏里玩游戏");
-			}
-			else if(关卡==2){
-				alert("你成为了学霸，你变强了，也变秃了。");
-			}
-		}
-		function chooseB() 
-		{
-			if(关卡==0){
-				win();
-			}
-			else if(关卡==1){
-				alert("然而OI大陆是小说，你咋生存？");
-			}
-			else if(关卡==2){
-				alert("你在游戏里搭网站？");
-			}
-		}
-		function chooseC() 
-		{
-			if(关卡==0){
-				win();
-			}
-			else if(关卡==1){
-				alert("在游戏里学OI？");
-			}
-			else if(关卡==2){
-				alert("壮举！可惜你不小心烧了学校");
-				win();
-			}
-		}
-		function chooseD() 
-		{
-			if(关卡==0){
-				win();
-			}
-			else if(关卡==1){
-				alert("对，这才现实");
-				win();
-			}
-			else if(关卡==2){
-				alert("emm，你想坐牢吗");
-			}
-		}
-		function win() 
-		{
-			关卡=关卡+1;	
-			if(关卡==1){
-				document.getElementById("demo").innerHTML = "关卡"+关卡+": 请选择你要生存的地方：A.蛮荒大陆 B.OI大陆 C.洛谷 D.学校";
-			}
-			if(关卡==2){
-				document.getElementById("demo").innerHTML = "关卡"+关卡+": 你来到了学校，你要干什么：A.好好学习文化课 B.学习HTML C.烧作业 D.打老师";
-			}
-			if(关卡==3){
-				alert("你对了。后续剧情持续更新中，请期待");
-			}
+			else alert(Story[Time].Fail[From]);
 		}
 	</script>
 		
@@ -125,16 +134,12 @@
 	<h1 class="midText"> 扯淡大冒险 </h1>
 	<p class="midText">累了？那么来玩一玩脑洞新奇的扯淡冒险吧</p>
 	<h1 class="blue">--------------------------------------------------------------------------------------------------------------------------------------</h1>
-	<p id="demo">按下面任意一个按钮开始冒险</p>
-	<span  class="Select_blue" onclick='chooseA()'><b>A</b></span>
-	<span  class="Select_blue" onclick='chooseB()'><b>B</b></span>
-	<span  class="Select_blue" onclick='chooseC()'><b>C</b></span>
-	<span  class="Select_blue" onclick='chooseD()'><b>D</b></span>
+	<p id="demo">按下面任意一个按钮开始冒险 awa</p>
+	<span id="Choose_A" class="Select_blue" onclick='Choose("A")'><b>A</b></span>
+	<span id="Choose_B" class="Select_blue" onclick='Choose("B")'><b>B</b></span>
+	<span id="Choose_C" class="Select_blue" onclick='Choose("C")'><b>C</b></span>
+	<span id="Choose_D" class="Select_blue" onclick='Choose("D")'><b>D</b></span>
 
 	<p></p>
-	
-	<script>
-		var 关卡=0;
-	</script>
 </body>
 </html>
