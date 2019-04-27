@@ -81,7 +81,7 @@
 				"A": "是",
 				"B": "是",
 				"C": "是",
-				"D": "是",
+				"D": "是"
 
 
 			},
@@ -147,7 +147,7 @@
 			{
 				"From": "All",
 				"Win": "监狱被炸毁了",
-				"Story": "看着被炸毁的废墟，你感慨万千，你要"
+				"Story": "看着被炸毁的废墟，你感慨万千，你要",
 				"A": "kill yourself",
 				"B": "自杀",
 				"C": "自刎",
@@ -157,13 +157,14 @@
 			},
 			{
 				"From": "All",
-				"Win": "你死了"，
+				"Win": "你死了",
 				"Story": "按A转世"
 
 
 
 			}
 		];
+		
 		function 咕咕咕()
 		{
 			alert("【咕咕咕！】");
@@ -189,7 +190,8 @@
 							   +"A. "+Story[Time].A+" B. "+Story[Time].B+" C. "+Story[Time].C+" D. "+Story[Time].D
 							   +"</p>";
 					Time++;
-				}
+				 
+			}
 			}
 
 			else alert(Story[Time].Fail[From]);
@@ -200,7 +202,7 @@
 	<style>
 		.hide
 		{
-			color: #66CCFF
+			color: #66CCFF;
 		}
 		body
 		{
@@ -251,19 +253,7 @@
 			background-color: blue;
 		}
 		.normal {font-style: normal;}
-		/*#Choose_E
-		{
-			color: #66CCFF;
-			background-color: #66CCFF;
-			padding: 7px;
-			border: 2px solid #66CCFF;
-			border-radius: 10px;
-			margin: 10px;
-			line-height: 30px;
-			width: 100px;
-			display: inline-block;
-			text-align:center;
-		}*/
+		
 	</style>
 <body>
 	<h1 class="midText"> 扯淡大冒险 </h1>
@@ -274,8 +264,10 @@
 	<span id="Choose_B" class="Select_blue" onclick='Choose("B")'><b>B</b></span>
 	<span id="Choose_C" class="Select_blue" onclick='Choose("C")'><b>C</b></span>
 	<span id="Choose_D" class="Select_blue" onclick='Choose("D")'><b>D</b></span>
-	<!--<span id="Choose_E" onclick='Choose("E")'><b></b></span>--> 
+	<span id="Choose_E" onclick='Choose("E")'><b></b></span> 
 
-	<p></p>
+	<p class="hide">你看不见我</p>
+
+	
 </body>
-</html>
+</html> 
