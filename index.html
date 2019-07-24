@@ -3,6 +3,14 @@
 <head>
 	<title>驿站小游戏：扯淡大冒险</title>
 	<script>
+	
+		    document.addEventListener('visibilitychange', function () {
+		    if (document.visibilityState == 'hidden') {
+			normal_title = document.title;
+			document.title = '你有正在进行的操作哦！';
+		    } else document.title = normal_title;
+		});
+
 		function E(id)
 		{
 			return document.getElementById(id);
